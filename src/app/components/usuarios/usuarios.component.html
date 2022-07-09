@@ -1,0 +1,10 @@
+<div class="container">
+    <p>usuarios works!</p>
+
+    <div *ngFor="let item of listaUsuarios">
+        <h5>{{item.nombre}} </h5>
+        <h6>{{item.email}} </h6>
+        <img src="http://localhost:5000{{item.imagen}}" width="50px" height="50px" alt="">
+        <hr>
+    </div>
+</div>
