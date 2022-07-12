@@ -1,10 +1,16 @@
 <div class="container">
-    <p>usuarios works!</p>
-
-    <div *ngFor="let item of listaUsuarios">
-        <h5>{{item.nombre}} </h5>
-        <h6>{{item.email}} </h6>
-        <img src="http://localhost:5000{{item.imagen}}" width="50px" height="50px" alt="">
-        <hr>
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-4" *ngFor="let item of listaUsuarios">
+            <div class="card text-left mb-2">
+                <img class="card-img-top" src="http://localhost:5000{{item.imagen}}" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">{{item.nombre}}</h4>
+                    <p class="card-text">{{item.email}}</p>
+                    <button type="button" class="btn btn-primary">Boton</button>
+                </div>
+            </div>
+        </div>
     </div>
+
+
 </div>

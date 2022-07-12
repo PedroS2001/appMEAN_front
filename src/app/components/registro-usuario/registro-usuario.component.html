@@ -1,0 +1,37 @@
+<div class="container">
+
+    <form [formGroup]="myForm" >
+        <div class="form-group mb-3">
+            <label for="txtNombre">Nombre</label>
+            <input type="text" class="form-control" formControlName="nombre" id="txtNombre"
+                placeholder="Nombre">
+            <small
+                *ngIf="myForm.get('nombre')?.invalid && (myForm.get('nombre')?.dirty || myForm.get('nombre')?.touched)"
+                class="form-text invalid">Ingrese un nombre</small>
+        </div>
+        <div class="form-group mb-3" >
+            <label for="txtEmail">Email</label>
+            <input type="email" class="form-control" formControlName="email" id="txtEmail" placeholder="Enter email">
+            <small *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || myForm.get('email')?.touched)"
+                class="form-text invalid">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group mb-3">
+            <label for="txtPassword">Password</label>
+            <input type="password" class="form-control" formControlName="password" id="txtPassword"
+                placeholder="Password">
+            <small
+                *ngIf="myForm.get('password')?.invalid && (myForm.get('password')?.dirty || myForm.get('password')?.touched)"
+                class="form-text invalid">We'll never share your password with anyone else.</small>
+        </div>
+        <div class="form-group mb-3">
+            <label for="ipFile">Imagen</label>
+            <input type="file" class="form-control" formControlName="imagen" id="ipFile"
+                placeholder="Imagen"  (change)="capturarFile($event)"  >
+            <small
+                *ngIf="myForm.get('imagen')?.invalid && (myForm.get('imagen')?.dirty || myForm.get('imagen')?.touched)"
+                class="form-text invalid">We'll never share your password with anyone else.</small>
+        </div>
+        <button class="btn btn-primary" (click)="clickRegistro()">Registrar</button>
+    </form>
+
+</div>

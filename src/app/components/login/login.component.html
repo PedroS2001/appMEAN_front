@@ -1,0 +1,21 @@
+<div class="container">
+
+    <form [formGroup]="myForm" >
+        <div class="form-group" >
+            <label for="txtEmail">Email</label>
+            <input type="email" class="form-control" formControlName="email" id="txtEmail" placeholder="Enter email">
+            <small *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || myForm.get('email')?.touched)"
+                class="form-text invalid">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group mb-3">
+            <label for="txtPassword">Password</label>
+            <input type="password" class="form-control" formControlName="password" id="txtPassword"
+                placeholder="Password">
+            <small
+                *ngIf="myForm.get('password')?.invalid && (myForm.get('password')?.dirty || myForm.get('password')?.touched)"
+                class="form-text invalid">We'll never share your password with anyone else.</small>
+        </div>
+        <button class="btn btn-primary" (click)="clickLogin()">Ingresar</button>
+    </form>
+
+</div>

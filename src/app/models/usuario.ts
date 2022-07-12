@@ -4,14 +4,14 @@ export class Usuario {
     password!: String;
     imagen!: String;
 
-    constructor(nombre: String, email: String, password: String, imagen: String) {
+    constructor(email: String, password: String, nombre: String, imagen: String = '') {
         this.nombre = nombre;
         this.email = email;
         this.password = password;
         this.imagen = imagen;
     }
 
-    public getNombre(){
+    public getNombre() {
         return this.nombre;
     }
 }
