@@ -29,4 +29,8 @@ export class UsuariosComponent implements OnInit {
     this.userEdit = user;
   }
 
+  extraerUsuario(index: number) {
+    this.listaUsuarios.splice(index, 1);
+  }
+
 }

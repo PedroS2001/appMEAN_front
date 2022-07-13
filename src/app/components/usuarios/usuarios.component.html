@@ -1,7 +1,7 @@
 <div class="container" *ngIf="!userEdit">
     <div class="row">
-        <div class="col-12 col-sm-6 col-md-4" *ngFor="let item of listaUsuarios">
-            <app-card-usuario [usuario]="item" (userExport)="asignarUsuario($event)"></app-card-usuario>
+        <div class="col-12 col-sm-6 col-md-4" *ngFor="let item of listaUsuarios;let i = index">
+            <app-card-usuario [usuario]="item" [index]="i" (userExport)="asignarUsuario($event)" (indice)="extraerUsuario($event)" ></app-card-usuario>
         </div>
     </div>
 </div>

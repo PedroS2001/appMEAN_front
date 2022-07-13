@@ -41,7 +41,17 @@ export class HttpService {
         'Authorization': jwt
       }
     })
+  }
 
+  eliminarUsuario(correo: string, jwt: any) {
+    return this.httpClient.delete(this.host + this.rutaUsuarios, {
+      headers: {
+        'Authorization': jwt
+      },
+      body: {
+        'email': correo
+      }
+    })
   }
 
 

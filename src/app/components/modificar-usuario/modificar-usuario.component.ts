@@ -43,11 +43,15 @@ export class ModificarUsuarioComponent implements OnInit {
       formData.append('imagen', this.imagen);
     }
 
-    this._service.modificarUsuario(formData, jwt)
-      .subscribe((datos: any) => {
-        console.log(datos);
-      })
-
+    if (this.myForm.valid) {
+      this._service.modificarUsuario(formData, jwt)
+        .subscribe((datos: any) => {
+          console.log(datos);
+        })
+    } else {
+      console.log("form invalido");
+    }
+    
   }
 
   capturarFile(event: any) {

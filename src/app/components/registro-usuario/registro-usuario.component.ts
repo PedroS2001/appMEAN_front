@@ -38,10 +38,14 @@ export class RegistroUsuarioComponent implements OnInit {
     formData.append('imagen', this.imagen);
 
     //console.log(nombre, correo, clave, this.imagen, jwt);
-    this._service.registrarUsuario(formData, jwt)
-      .subscribe((datos: any) => {
-        console.log(datos);
-      })
+    if (this.myForm.valid) {
+      this._service.registrarUsuario(formData, jwt)
+        .subscribe((datos: any) => {
+          console.log(datos);
+        })
+    } else {
+      console.log("form invalido");
+    }
 
   }
 

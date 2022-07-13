@@ -3,6 +3,9 @@
     <div class="card-body">
         <h4 class="card-title">{{usuario.getNombre()}}</h4>
         <p class="card-text">{{usuario.getEmail()}}</p>
-        <button type="button" class="btn btn-primary" (click)="seleccionaUsuario(usuario)" >Boton</button>
+        <div class="card-myfooter">
+            <button type="button" class="btn btn-primary" (click)="seleccionaUsuario(usuario)">Modificar</button>
+            <button type="button" class="btn btn-danger" (click)="eliminarUsuario(usuario)">Eliminar</button>
+        </div>
     </div>
 </div>
