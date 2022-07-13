@@ -35,6 +35,15 @@ export class HttpService {
     });
   }
 
+  modificarUsuario(formData: FormData, jwt: any) {
+    return this.httpClient.put(this.host + this.rutaUsuarios, formData, {
+      headers: {
+        'Authorization': jwt
+      }
+    })
+
+  }
+
 
 }
 

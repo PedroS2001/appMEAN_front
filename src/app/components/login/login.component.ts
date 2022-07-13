@@ -23,16 +23,14 @@ export class LoginComponent implements OnInit {
     let correo = this.myForm.get('email')?.value;
     let clave = this.myForm.get('password')?.value;
 
-    console.log(correo, clave);
-
-    this._service.login(correo, clave).subscribe((datos: any) => {
-      console.log(datos);
-      if (datos.jwt) {
+    this._service.login(correo, clave)
+      .subscribe((datos: any) => {
+        console.log(datos);
         localStorage.setItem('token', datos.jwt);
         this._service.currentUser = datos.usuario.email;
-      }
-
-    })
+      }, (err: any) => {
+        console.log(err.error.msj);
+      })
 
 
   }

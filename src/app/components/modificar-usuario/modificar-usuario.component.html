@@ -8,25 +8,25 @@
                 *ngIf="myForm.get('nombre')?.invalid && (myForm.get('nombre')?.dirty || myForm.get('nombre')?.touched)"
                 class="form-text invalid">Ingrese un nombre valido</small>
         </div>
+
         <div class="form-group mb-3">
             <label for="txtEmail">Email</label>
-            <input type="email" class="form-control" formControlName="email" id="txtEmail" placeholder="Enter email">
-            <small *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || myForm.get('email')?.touched)"
-                class="form-text invalid">Ingrese un email valido</small>
+            <input type="email" class="form-control" readonly formControlName="email" id="txtEmail" placeholder="Enter email">
         </div>
+
         <div class="form-group mb-3">
             <label for="txtPassword">Password</label>
-            <input type="password" class="form-control" formControlName="password" id="txtPassword"
-                placeholder="Password">
+            <input type="password" class="form-control" formControlName="password" id="txtPassword" placeholder="Password">
             <small
                 *ngIf="myForm.get('password')?.invalid && (myForm.get('password')?.dirty || myForm.get('password')?.touched)"
                 class="form-text invalid">La clave debe tener mas de 6 caracteres</small>
         </div>
+
         <div class="form-group mb-3">
             <label for="ipFile">Imagen</label>
-            <input type="file" class="form-control" formControlName="imagen" id="ipFile" placeholder="Imagen"
-                (change)="capturarFile($event)">
+            <input type="file" class="form-control" formControlName="imagen" id="ipFile" placeholder="Imagen" (change)="capturarFile($event)">
         </div>
+
         <button class="btn btn-primary" (click)="clickRegistro()">Registrar</button>
     </form>
 

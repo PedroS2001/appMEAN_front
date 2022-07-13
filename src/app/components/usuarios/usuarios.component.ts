@@ -9,6 +9,7 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class UsuariosComponent implements OnInit {
 
+  userEdit!: Usuario;
   listaUsuarios: Usuario[] = new Array<Usuario>();
   constructor(private http: HttpService) { }
 
@@ -18,11 +19,14 @@ export class UsuariosComponent implements OnInit {
       datos.forEach((element: any) => {
         let user: Usuario = new Usuario(element.email, element.password, element.nombre, element.imagen);
         this.listaUsuarios.push(user);
-        console.log(user.getNombre());
       });
 
-      console.log(this.listaUsuarios);
     })
+  }
+
+
+  asignarUsuario(user: Usuario) {
+    this.userEdit = user;
   }
 
 }

@@ -1,16 +1,15 @@
-<div class="container">
+<div class="container" *ngIf="!userEdit">
     <div class="row">
         <div class="col-12 col-sm-6 col-md-4" *ngFor="let item of listaUsuarios">
-            <div class="card text-left mb-2">
-                <img class="card-img-top" src="http://localhost:5000{{item.imagen}}" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">{{item.nombre}}</h4>
-                    <p class="card-text">{{item.email}}</p>
-                    <button type="button" class="btn btn-primary">Boton</button>
-                </div>
-            </div>
+            <app-card-usuario [usuario]="item" (userExport)="asignarUsuario($event)"></app-card-usuario>
         </div>
     </div>
+</div>
 
-
+<div class="container" *ngIf="userEdit">
+    <div class="row">
+        <div class="col">
+            <app-modificar-usuario [user]="userEdit"></app-modificar-usuario>
+        </div>
+    </div>
 </div>

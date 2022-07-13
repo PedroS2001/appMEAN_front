@@ -8,6 +8,9 @@ import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
+import { ModificarUsuarioComponent } from './components/modificar-usuario/modificar-usuario.component';
+import { CardUsuarioComponent } from './components/card-usuario/card-usuario.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { RegistroUsuarioComponent } from './components/registro-usuario/registro
     UsuariosComponent,
     LoginComponent,
     NavbarComponent,
-    RegistroUsuarioComponent
+    RegistroUsuarioComponent,
+    ModificarUsuarioComponent,
+    CardUsuarioComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
